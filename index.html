@@ -13,7 +13,7 @@
     <h4>Questions</h4>
     <ol>
         <li> Name a real-life situation where you would need to use an `if` statement. </li>
-        <li> Put your answer here. </li>
+        <li> A real life situation would be if I'm hungry, get food. Else, don't get food. </li>
 
         <li> Explain the difference between `==` and `===`. Why is strict equality usually better? </li>
         <li> 
@@ -27,9 +27,13 @@
             For example if we had a for loop that counts cards and its points, but we don't want it to go over a certain score, 
             we can do this:
                 for (let i = 0; i < cardSize && !(currentScore > 21); i++) {...}
+            This will iterate over our hypothetical cards so long as our currentScore isn't greater than 21. 
+            If it goes over it will terminate the loop, or we reach the end of available cards.
+
             For the logical operator or ||, only one expression needs to be true. Let's say we want to keep playing a game as long as 
             the user doesn't quit or if we dont meet the score requirement. We can do this:
                 while (continue != 'q' || score >= 21) {...}
+            This means that the game will continue while the user hasn't pressed q or if the score isn't greater than or equal to 21.
         </li>
 
         <li> What does the `!` (NOT) operator do? Give an example of a situation you would use it. </li>
@@ -39,7 +43,7 @@
                     while (!won) {
                         ...
                     } 
-            The not operator does the opposite condition of the boolean. since we have 'won' set to false, using the not operator turns it into a truthy.
+            The not operator does the opposite condition of the boolean. since we have 'won' set to false, using the not operator turns it into a truthy value.
         </li>
     </ol>
 </body>
