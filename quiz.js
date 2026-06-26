@@ -4,16 +4,23 @@
 /* PLAN - PSEUDOCODE
 1. Initialize score variable name will be 'currentScore' set to 0.
 2. Question 1: What tech company do I want to work for?
-    - companyAnswer = prompt();
-    - Correct answer: "Garmin"
-    - How I'll validate and check the answer: I will use an if statement to compare companyAnswer == "Garmin";
+    - let companyName = prompt("What tech company do I want to work for?") || "";
+    - Correct answer: "GARMIN"
+    - How I'll validate and check the answer: I will use these two statements:
+        - if (companyName && companyName.trim() !== "" {...};
+        - if (companyName.toUpperCase() == "GARMIN"){...};
 3. Use that structure for all four questions.
 6. Math: we can use the currentScore variable to divide by the sum of questions.
     Since we know we are only using 4 questions, I will store the value 4 in a const variable.
 7. Final feedback logic (if / else if / else):
+    if (currentScore == 1) 25% message
+    else if (currentScore == 2) 50% message
+    else if (currentScore == 3) 75% message
+    else if (currentScore == 4) 100% message
+    else 0% message
 Logical operators I will use:
-- && for ...
-- || or ! for ...
+- && for checking companyName is not empty AND it has content.
+- ! for returning the inverse of a boolean result.
 */
 
 console.log("=== My Quiz Game ===");
