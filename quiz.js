@@ -28,50 +28,65 @@ let question4 = "Given this sequence: 70, 50, 35, 25, X. What is X's value?";
 // Question 1
 let companyName = prompt("What tech company do I want to work for?") || "";
 
-if (companyName.toLowerCase() == "garmin" && companyName.trim() !== "") currentScore++;
+if (companyName && companyName.trim() !== "") {
+    if(companyName.toUpperCase() == "GARMIN") currentScore++;
+
+} else alert("Invalid input.");
 
 // Question 2
 let knownLanguages = prompt("How many languages do I know? (use numbers)") || "";
 
-if (parseInt(knownLanguages) === 2) currentScore++;
+if (parseInt(knownLanguages) !== NaN && knownLanguages.trim() !== "") {
+    if (parseInt(knownLanguages) === 2) currentScore++;
+
+} else alert("Invalid input.");
 
 // Question 3
 let codingLanguage = prompt("What is my favorite coding language?") || "";
 
-if (codingLanguage.toLowerCase() == "C++" && codingLanguage.trim() !== "") currentScore++;
+if (codingLanguage && codingLanguage.trim() !== "") {
+    if (codingLanguage.toUpperCase() == "C++") currentScore++;
+
+} else alert("Invalid input.");
 
 // Question 4
-let mathSequence = prompt("Given this sequence: 70, 50, 35, 25, X. \nWhat is X's value?") || 0;
+let mathSequence = prompt("Given this sequence: 70, 50, 35, 25, X. \nWhat is X's value?") || "";
 
-if (parseInt(mathSequence) === 20) currentScore++;
+if (parseInt(mathSequence) !== NaN && mathSequence.trim() !== "") {
+    if (parseInt(mathSequence) === 20) currentScore++;
+
+} else alert("Invalid input.");
 
 // Calculate percentage using math
 const finalScore = currentScore / QUESTIONS * 100;
 
-// Final feedback using if / else if / else
-if (currentScore === 3 || currentScore === 4) {
-    alert(`Woah... You got ${currentScore}/${QUESTIONS} right!`);
-} else if (currentScore <= 2) {
-    alert(`You got ${currentScore}/${QUESTIONS} right. You should know better...`);
+// Final message based on user's score before showing score summary
+if (currentScore == 1) {
+    alert(`You got ${currentScore}/${QUESTIONS} right. That's kind of embarassing, but expected...`);
+} else if (currentScore == 2) {
+    alert(`You got ${currentScore}/${QUESTIONS} right. Y'know, you did better than I thought.`);
+} else if (currentScore == 3) {
+    alert(`You got ${currentScore}/${QUESTIONS} right. Impressive! Was it just luck though...?`);
+} else if (currentScore == 4) {
+    alert(`You got ${currentScore}/${QUESTIONS} Woah... you got them all right? Do you know me in real life?`);
+} else {
+    alert("Yeah... That makes sense, stranger.");
 }
 
-//If statement that uses and alert statement about their score
-
-// Final summary alert
 alert(`
     -=-=-=-=-=-= Score Summary =-=-=-=-=-=-
     Score: ${finalScore}%
     ---------------------------------------
     Question 1: ${question1}
-    Your Answer: ${companyName}
-    Correct Answer: "Garmin"
+    Your Answer: ${companyName.toUpperCase()}
+    Correct Answer: GARMIN
     ---------------------------------------
     Question 2: ${question2}
     Your Answer: ${knownLanguages}
     Correct Answer: 2
     ---------------------------------------
     Question 3: ${question3}
-    Your Answer: ${codingLanguage}
+    Your Answer: ${codingLanguage.toUpperCase()}
     Correct Answer: C++
     ---------------------------------------
     Question 4: ${question4}
